@@ -20,7 +20,9 @@
             video.muted = false;
           });
 
-
+          marker.addEventListener('targetLost', function() {
+            video.muted = true;
+          });
         }
       });
     </script>
