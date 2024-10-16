@@ -13,6 +13,17 @@
       AFRAME.registerComponent('videohandler', {
         init: function () {
           var marker = this.el;
+          var video = document.querySelector("#Luca");
+
+          marker.addEventListener('targetFound', function() {
+            video.play();
+            video.muted = false;
+          });
+
+          marker.addEventListener("targetLost", function() {
+            video.muted = true;
+          });
+          
           var video = document.querySelector("#Chloe");
 
           marker.addEventListener('targetFound', function() {
